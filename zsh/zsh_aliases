@@ -1,5 +1,3 @@
-### Start defining own aliases
-
 # Built-in
 alias l='ls -lah'
 alias ls='ls --color=tty'
