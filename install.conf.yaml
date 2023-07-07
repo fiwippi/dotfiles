@@ -21,6 +21,10 @@
     # nvim
     ~/.config/nvim: nvim
 
+    # mpv
+    ~/.config/mpv/mpv.conf: mpv/mpv.conf
+    ~/.config/mpv/input.conf: mpv/input.conf
+
 # This section contains raw shell commands which are run upon running the 
 # install script
 - shell:
