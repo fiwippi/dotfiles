@@ -1,9 +1,3 @@
-### Remove oh-my-zsh aliases
-unalias -m '*'
-
-
-
-
 ### Start defining own aliases
 
 # Built-in
@@ -17,4 +11,3 @@ alias ......=../../../../..
 # Custom
 alias dl="yt-dlp"
 alias diff='diff --color'
-
