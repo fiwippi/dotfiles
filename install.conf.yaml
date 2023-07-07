@@ -1,0 +1,27 @@
+# Defaults controls what action will be taken for each link in the link section
+- defaults:
+    link:
+      relink: true # Removes the old target if it's a symlink
+
+# This defines what directory should be inspected for dead links. Dead links are
+# automatically removed.
+- clean: ['~']
+
+# This defines where we want the symlink to be once linked, and what file should
+# be linked there
+- link:
+    # zsh
+    ~/.zshrc:
+      force: true
+      path: zsh/zshrc
+    ~/.dircolors: zsh/dircolors
+    ~/.zshenv: zsh/zshenv
+    ~/.zsh_aliases: zsh/zsh_aliases
+
+    # nvim
+    ~/.config/nvim: nvim
+
+# This section contains raw shell commands which are run upon running the 
+# install script
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]

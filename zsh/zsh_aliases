@@ -1,0 +1,20 @@
+### Remove oh-my-zsh aliases
+unalias -m '*'
+
+
+
+
+### Start defining own aliases
+
+# Built-in
+alias l='ls -lah'
+alias ls='ls --color=tty'
+alias ...=../..
+alias ....=../../..
+alias .....=../../../..
+alias ......=../../../../..
+
+# Custom
+alias dl="yt-dlp"
+alias diff='diff --color'
+

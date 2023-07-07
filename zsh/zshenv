@@ -1,0 +1,11 @@
+# Environment Variables
+export MANPATH="/usr/local/man:$MANPATH"
+export EDITOR='nvim'
+export HISTFILE=~/.zsh_history
+export HISTSIZE=500000
+export SAVEHIST=500000
+export GOPATH=$HOME/go; export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+
+# Path
+. "$HOME/.cargo/env" # Add rust binaries to path
+

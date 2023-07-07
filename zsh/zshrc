@@ -1,0 +1,58 @@
+## Set options
+# See: https://zsh.sourceforge.io/Doc/Release/Options.html
+
+# History
+setopt extended_history       # Record timestamp of command in HISTFILE
+setopt hist_expire_dups_first # Delete duplicates first when HISTFILE size exceeds HISTSIZE
+setopt hist_ignore_dups       # Ignore duplicated commands history list
+setopt hist_ignore_space      # Ignore commands that start with space
+setopt hist_verify            # Show command with history expansion to user before running it
+setopt share_history          # Share command history data
+setopt inc_append_history     # Append history as command are entered
+
+# Completion
+unsetopt menu_complete        # Do not autoselect the first completion entry
+unsetopt flowcontrol
+setopt auto_menu              # Show completion menu on successive tab press
+setopt complete_in_word
+setopt always_to_end
+
+# Globbing
+setopt extended_glob
+setopt glob_dots
+
+# Prompt
+setopt prompt_subst           # Expand variables and commands in PROMPT variables
+
+# Streams
+setopt multios                # Enable redirect to multiple streams: echo >file1 >file2
+
+# Directories
+setopt auto_cd
+setopt auto_pushd
+setopt pushd_ignore_dups
+setopt pushdminus
+
+# Load colours
+autoload -U colors && colors # Enable colors
+
+# Set the dircolors
+eval "$(dircolors ~/.dircolors)"
+
+# Set aliases
+if [ -f ~/.zsh_aliases ]; then
+  . ~/.zsh_aliases
+fi
+
+# Make autocomplete ignore case
+autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+
+# Load git info for prompt
+# See: https://git-scm.com/book/en/v2/Appendix-A%3A-Git-in-Other-Environments-Git-in-Zsh
+autoload -Uz vcs_info
+precmd() { vcs_info }
+zstyle ':vcs_info:git:*' formats '%F{blue}git:(%f%F{red}%b%f%F{blue})%f'
+
+# Configure prompt
+PROMPT='%B%F{green}➜%f %F{green}%~%f ${vcs_info_msg_0_}%b  '
