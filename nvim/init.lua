@@ -130,7 +130,7 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 
 -- Set colourscheme
-vim.opt.background = "light"
+vim.opt.background = "dark"
 vim.cmd("colorscheme gruvbox")
 
 -- Autocompletion of files and commands behaves like shell
@@ -253,6 +253,11 @@ require('lualine').setup {
 }
 
 -- mason
+-- NOTE: npm must be installed on the system for
+--       some of the lsps to be installable, e.g.
+--       cssls, eslint, tsserver
+-- NOTE: ghcup must be installed on the system in
+--       order to install hls
 require("mason").setup()
 
 -- mason-lspconfig

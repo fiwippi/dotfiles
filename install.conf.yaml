@@ -19,10 +19,14 @@
     ~/.zsh_aliases: zsh/zsh_aliases
 
     # nvim
-    ~/.config/nvim: nvim
+    ~/.config/nvim:
+      force: true
+      path: nvim
 
     # mpv
-    ~/.config/mpv/mpv.conf: mpv/mpv.conf
+    ~/.config/mpv/mpv.conf:
+      force: true
+      path: mpv/mpv.conf
     ~/.config/mpv/input.conf: mpv/input.conf
 
 # This section contains raw shell commands which are run upon running the 
