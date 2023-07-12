@@ -36,8 +36,10 @@ setopt pushdminus
 # Load colours
 autoload -U colors && colors # Enable colors
 
-# Set the dircolors
-eval "$(dircolors ~/.dircolors)"
+# Set the dircolors if not on OSX
+if [[ $(uname) != "Darwin" ]]; then
+    eval "$(dircolors ~/.dircolors)"
+fi
 
 # Set aliases
 if [ -f ~/.zsh_aliases ]; then
