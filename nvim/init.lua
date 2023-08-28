@@ -130,7 +130,22 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 
 -- Set colourscheme
+--
+-- Note: gruvbox settings must be set before "colourscheme gruvbox" is called
+
+-- gruvbox - Enable italic text
+vim.g.gruvbox_italic = 1
+
+-- gruvbox - Disable bold text
+vim.g.gruvbox_bold = 0
+
+-- gruvbox - Set the dark theme contrast to medium
+vim.g.gruvbox_contrast_dark = "medium"
+
+-- Set colourscheme background
 vim.opt.background = "dark"
+
+-- Set gruvbox colourscheme
 vim.cmd("colorscheme gruvbox")
 
 -- Autocompletion of files and commands behaves like shell
@@ -196,12 +211,6 @@ vim.diagnostic.config({
 
 -- ============================================================================
 -- Plugin configuration
-
--- gruvbox - Enable italic text
-vim.g.gruvbox_italic = 1
-
--- gruvbox - Set the light theme contrast to medium
-vim.g.gruvbox_contrast_light = "medium"
 
 -- vim2hs - Disable simple conceals
 vim.g.haskell_conceal = 0
